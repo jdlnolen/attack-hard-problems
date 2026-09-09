@@ -1,0 +1,4 @@
+interface:
+  display_name: "Attack Hard Problems"
+  short_description: "Structure difficult, uncertain problem-solving"
+  default_prompt: "Use $attack-hard-problems to structure and attack this difficult problem."
