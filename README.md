@@ -16,7 +16,7 @@ It turns an open-ended problem into an adaptive research program using:
 Copy this repository into your personal Codex skills directory:
 
 ```bash
-git clone <repository-url> ~/.codex/skills/attack-hard-problems
+git clone https://github.com/jdlnolen/attack-hard-problems.git ~/.codex/skills/attack-hard-problems
 ```
 
 ## Use
