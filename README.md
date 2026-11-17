@@ -45,6 +45,14 @@ Look for these in the result.
 
 See the [skill instructions](SKILL.md) and the [optional delegation guide](references/agent-topology.md).
 
+## Optional handoff to autoresearch
+
+If a branch has a repeatable test, you can hand that branch to a separate autoresearch session. Every's Map-driven Autoresearch experiment describes a parent agent selecting paths from a research map and running each as a separate session. [Every Frontier's Map-driven Autoresearch](https://frontier.every.to/experiments/map-driven-autoresearch)
+
+Use the existing [branch brief](references/agent-topology.md#branch-prompt-contract) to pass along the question, the test, what would disconfirm the hypothesis, the budget, and when to stop. Bring back the observations and failed attempts. The Attack Hard Problems coordinator tracks the overall budget, compares results across branches, and verifies the conclusion against the original question.
+
+Each workflow can run independently.
+
 ## Origin
 
 The skill adapts OpenAI's approach to the Navier–Stokes problem. Separate agent groups pursued proofs and disproofs. A result on the related Euler equations helped the team decide where to concentrate its efforts. The groups shared intermediate findings, and the resulting proof was formalized and checked in Lean. This skill brings those steps to investigations that one Codex agent or a small group can run. [OpenAI, *On the Navier–Stokes Millennium Prize Problem*, September 8, 2026](https://openai.com/index/navier-stokes-solution/)
