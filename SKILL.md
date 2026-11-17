@@ -7,6 +7,8 @@ description: Investigate an open-ended problem when credible explanations or sol
 
 Turn the problem into an adaptive research program, then pursue it until there is a supported answer, a decisive falsification, or a precise account of what remains unresolved.
 
+Adapted from the research workflow described in [OpenAI's Navier–Stokes article](https://openai.com/index/navier-stokes-solution/).
+
 ## Choose the operating depth
 
 - If the user asks for a plan, framing, or strategy, produce a plan with resolution branches, the first discriminating check, and its stop condition. End before running experiments.

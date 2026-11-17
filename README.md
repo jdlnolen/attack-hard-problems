@@ -45,6 +45,10 @@ Look for these in the result.
 
 See the [skill instructions](SKILL.md) and the [optional delegation guide](references/agent-topology.md).
 
+## Origin
+
+The skill adapts OpenAI's approach to the Navier–Stokes problem. Separate agent groups pursued proofs and disproofs. A result on the related Euler equations helped the team decide where to concentrate its efforts. The groups shared intermediate findings, and the resulting proof was formalized and checked in Lean. This skill brings those steps to investigations that one Codex agent or a small group can run. [OpenAI, *On the Navier–Stokes Millennium Prize Problem*, September 8, 2026](https://openai.com/index/navier-stokes-solution/)
+
 ## License
 
 [MIT](LICENSE)
