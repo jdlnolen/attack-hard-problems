@@ -16,7 +16,7 @@ harbor/17 -> Orchard summary
 harbor/24 -> Harbor inventory
 ```
 
-To try the skill yourself, copy `references/fixtures/report_cache.py` into an empty working folder and open Codex there. Keep the walkthrough collapsed until your run finishes.
+To try the skill yourself, copy `references/fixtures/report_cache.py` into an empty working folder and open Codex or Claude Code there. In Claude Code, replace the first sentence of the prompt below with `/attack-hard-problems Investigate report_cache.py.` Keep the walkthrough collapsed until your run finishes.
 
 ```text
 Use $attack-hard-problems to investigate report_cache.py. With one
@@ -85,7 +85,7 @@ The original fails the Orchard request for ID `42` and the Harbor request for ID
 
 ## Run the same checks with one agent or several
 
-In a solo run, have Codex test the fresh lookup first, then reverse the request order and check the proposed repair against the reserved sequences.
+In a solo run, ask your agent to test the fresh lookup first, then reverse the request order and check the proposed repair against the reserved sequences.
 
 If your host supports delegation and you authorize it, give one branch the fresh lookup and another the request-order test. Give both the workspace isolation rule and ask for the exact requests and outputs. Once they return, hand the original rule and reserved sequences to a verifier. The coordinator compares all results and reports the scope of the repair. See the [delegation guide](agent-topology.md).
 

@@ -1,12 +1,14 @@
 # Attack Hard Problems
 
-A Codex skill for investigating problems where several explanations fit the evidence, or where the path to a solution is still unclear. Give it the question, the evidence you have, and the constraints. It will design checks that can distinguish the leading hypotheses, then report what survived and where the evidence runs out.
+An Agent Skill for Codex and Claude Code. Use it when several explanations fit the evidence or the path to a solution is unclear. Give it the question, the evidence you have, and the constraints. It will design checks that can distinguish the leading hypotheses, then report what survived and where the evidence runs out.
 
-Use it for an intermittent failure, a research claim that needs a counterexample, or a design decision whose tradeoffs you can test. For a routine change with a known procedure, give Codex the task directly.
+Use it for an intermittent failure, a research claim that needs a counterexample, or a design decision whose tradeoffs you can test. For a routine change with a known procedure, give your agent the task directly.
 
-## Install in Codex
+## Install
 
-For use across your projects, run these commands in a terminal.
+### Codex
+
+To install for your Codex projects, run these commands in a terminal.
 
 ```bash
 mkdir -p ~/.agents/skills
@@ -15,11 +17,22 @@ git clone https://github.com/jdlnolen/attack-hard-problems.git ~/.agents/skills/
 
 For use in one repository, place the complete skill directory at `.agents/skills/attack-hard-problems/` in that repository. If you already installed an earlier copy, update that folder to avoid duplicate skill entries. Open a Codex chat and type `$` to find **Attack Hard Problems**. Restart Codex if the skill is missing. [Codex skills documentation](https://developers.openai.com/codex/skills)
 
+### Claude Code
+
+To install for your local Claude Code projects, run these commands in a terminal.
+
+```bash
+mkdir -p ~/.claude/skills
+git clone https://github.com/jdlnolen/attack-hard-problems.git ~/.claude/skills/attack-hard-problems
+```
+
+For use in one repository, place the complete skill directory at `.claude/skills/attack-hard-problems/` in that repository. Open Claude Code and type `/attack-hard-problems`. If you created the `skills` directory during an active session, restart Claude Code. [Claude Code skills documentation](https://code.claude.com/docs/en/skills)
+
 The skill works with one agent. Individual investigations may need tools or data from your project. The included exercise needs only Python 3.
 
 ## Try it
 
-Copy this into Codex from the project you want to investigate.
+Use this prompt from the project you want to investigate. In Claude Code, replace `Use $attack-hard-problems to investigate` with `/attack-hard-problems Investigate`.
 
 ```text
 Use $attack-hard-problems to investigate [question or observed symptom].
@@ -55,7 +68,7 @@ Each workflow can run independently.
 
 ## Origin
 
-The skill adapts OpenAI's approach to the Navier–Stokes problem. Separate agent groups pursued proofs and disproofs. A result on the related Euler equations helped the team decide where to concentrate its efforts. The groups shared intermediate findings, and the resulting proof was formalized and checked in Lean. This skill brings those steps to investigations that one Codex agent or a small group can run. [OpenAI, *On the Navier–Stokes Millennium Prize Problem*, September 8, 2026](https://openai.com/index/navier-stokes-solution/)
+The skill adapts OpenAI's approach to the Navier–Stokes problem. Separate agent groups pursued proofs and disproofs. A result on the related Euler equations helped the team decide where to concentrate its efforts. The groups shared intermediate findings, and the resulting proof was formalized and checked in Lean. This skill brings those steps to investigations that one agent or a small group can run. [OpenAI, *On the Navier–Stokes Millennium Prize Problem*, September 8, 2026](https://openai.com/index/navier-stokes-solution/)
 
 ## License
 
