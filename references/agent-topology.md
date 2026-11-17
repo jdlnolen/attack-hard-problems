@@ -1,6 +1,6 @@
 # Multi-agent topology for hard problems
 
-Read this only when multiple independent branches can run concurrently and subagent delegation is available.
+Use this guide when multiple branches can run independently and the host and user instructions permit delegation. The coordinator can also run the same checks in sequence.
 
 ## Dispatch test
 
@@ -11,7 +11,7 @@ Use multiple agents when all are true:
 - results can be compared against a common evidence contract;
 - synthesis value exceeds coordination overhead.
 
-Otherwise work serially. More agents are not a substitute for a well-posed problem.
+If any condition is missing, work serially.
 
 ## Default topology
 
@@ -58,9 +58,9 @@ Begin broad enough to test the main branches, then reallocate based on discrimin
 
 Terminate duplicated, stalled, or falsified branches. Open a new one only when it represents a distinct hypothesis or a necessary independent verification path.
 
-## Verification firewall
+## Independent verification
 
-The coordinator must compare the candidate answer against the original success criteria, not the proxy's criteria. Commission an independent verification pass when the result is consequential, surprising, or difficult to inspect.
+The coordinator must compare the candidate answer against the original success criteria, not the proxy's criteria. Give the verifier the original criteria and raw inputs. When it helps prevent anchoring, withhold the solver's explanation until the verifier has recorded an observation.
 
 Before shared, external, production, financial, legal, medical, privacy, permission, or security-sensitive action:
 
