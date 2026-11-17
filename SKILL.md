@@ -1,20 +1,18 @@
 ---
 name: attack-hard-problems
-description: Structure and pursue difficult, high-uncertainty problems through outcome branching, proxy problems, diverse hypotheses, adaptive research rounds, synthesis, and independent verification. Use for open-ended scientific, technical, analytical, diagnostic, design, or strategy problems where the answer or path is genuinely unknown; not for routine tasks with an established procedure.
+description: Investigate an open-ended problem when credible explanations or solution paths make different predictions and the evidence is incomplete. Design discriminating tests or smaller proxy problems, revise the investigation as evidence arrives, and verify the surviving result. Use for unresolved diagnoses, counterexamples, or research and design decisions that need evidence. Skip routine tasks with an established procedure.
 ---
 
 # Attack Hard Problems
 
 Turn the problem into an adaptive research program, then pursue it until there is a supported answer, a decisive falsification, or a precise account of what remains unresolved.
 
-The goal is not maximum parallelism. The goal is useful diversity, rapid learning, and progressively stronger verification.
-
 ## Choose the operating depth
 
-- If the user asks for a plan, framing, or strategy, produce the attack map and stop before execution.
-- If the user asks to solve, investigate, diagnose, or make progress, build the attack map and execute the highest-value safe research rounds.
+- If the user asks for a plan, framing, or strategy, produce a plan with resolution branches, the first discriminating check, and its stop condition. End before running experiments.
+- If the user asks to solve, investigate, diagnose, or make progress, outline the first research round and run the highest-value checks within the user's scope and budget.
 - If the user supplies a proposed answer, treat it as one hypothesis rather than the default conclusion.
-- If the task becomes routine after inspection, leave this workflow and complete it directly.
+- If inspection resolves most of the uncertainty, complete the task directly and carry out any tests or comparisons the user requested.
 
 ## 1. Define the decision surface
 
@@ -27,7 +25,7 @@ State the problem in a form that can fail. Capture:
 - what is known, assumed, and unknown;
 - the smallest result that would materially change the next decision.
 
-Enumerate the mutually exclusive resolution branches. Include both constructive and falsifying paths whenever the problem permits them. Do not quietly assume that the user's preferred conclusion is true.
+List the mutually exclusive ways the decision could resolve, such as supported, falsified, or unresolved at the current budget. Several causes can contribute to one outcome. Include both constructive and falsifying paths whenever the problem permits them. Do not quietly assume that the user's preferred conclusion is true.
 
 For high-stakes, shared, external, or difficult-to-reverse consequences, also identify who can authorize action, the stop or rollback condition, and what requires experienced human review. Research and recommendation do not imply permission to act.
 
@@ -41,7 +39,7 @@ Look for smaller or adjacent problems that preserve the suspected hard mechanism
 - construct a counterexample to a weakened or strengthened version;
 - reproduce a known special case before attempting the general case.
 
-For every proxy, state what finding would transfer to the original problem and what would not. A proxy result is evidence, not a solution, until the transfer argument is checked.
+For every proxy, state what finding would transfer to the original problem and what would not. Apply a proxy result to the original problem only after checking that the mechanism and relevant conditions carry over.
 
 ## 3. Create a hypothesis portfolio
 
@@ -56,7 +54,7 @@ Decompose by competing explanations or solution mechanisms, not merely by docume
 
 Give each branch an evidence contract: the question it owns, its permitted assumptions, expected artifact, disconfirming evidence, and stop condition. Avoid launching several branches that differ only in wording.
 
-When subagent delegation is available and these branches can run independently, read [references/agent-topology.md](references/agent-topology.md) before dispatching. Do not delegate merely to inflate agent count.
+Run distinct branches in sequence by default. If the host and user instructions permit delegation and the branches can run independently, read [the delegation guide](references/agent-topology.md) before dispatching. For a concrete example of both approaches, see the [worked cache investigation](references/worked-example.md).
 
 ## 4. Run bounded research rounds
 
@@ -105,7 +103,7 @@ Stop when one of these conditions holds:
 
 ## 7. Separate discovery from verification
 
-Do not let the mechanism that generated a candidate answer be its only validator. Choose checks appropriate to the domain:
+Check the candidate using fresh inputs, a distinct method, or an independent reviewer. One agent can use a separate verification pass with a check chosen independently of the discovery result. Choose checks appropriate to the domain:
 
 - reproduce the result from raw inputs;
 - test adversarial, boundary, and negative cases;
@@ -126,6 +124,6 @@ Lead with the current answer or decision. Then give:
 4. what proxy work transferred and why;
 5. discarded paths and what they taught;
 6. remaining uncertainty and the next highest-value check;
-7. one recommendation: continue exploring privately, hold for verification, or escalate for experienced review when consequential action is contemplated.
+7. the decision the evidence supports, or the next step needed to make it. Identify any required approval or human review for consequential action.
 
 Distinguish reported facts, direct observations, derived conclusions, and speculation. If the problem remains unsolved, deliver a narrower problem with sharper constraints and a ranked evidence gap rather than manufacturing closure.

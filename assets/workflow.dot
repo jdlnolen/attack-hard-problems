@@ -1,0 +1,18 @@
+digraph Workflow {
+  graph [bgcolor="#f6f8fc", pad="0.28", nodesep="0.35", ranksep="0.52", fontname="Helvetica", fontsize=18, fontcolor="#152742", label="Investigating a hard problem", labelloc=t, labeljust=l]
+  node [shape=box, style="rounded,filled", fillcolor="#ffffff", color="#91a8c7", fontname="Helvetica", fontcolor="#152742", fontsize=14, margin="0.20,0.11"]
+  edge [color="#406284", penwidth=1.5, fontname="Helvetica", fontcolor="#334b67", fontsize=12, arrowsize=0.7]
+
+  frame [label="Frame a testable question\nSet success and stop conditions", fillcolor="#e4eefc"]
+  branches [label="Choose competing hypotheses\nFind a small test that can separate them"]
+  test [label="Run a bounded round\nCompare predictions with observations"]
+  verify [label="Verify the candidate\nUse fresh inputs or a separate method", fillcolor="#e2f5ed", color="#6ba390"]
+  result [label="Report the decision and evidence\nName any remaining gap", fillcolor="#e2f5ed", color="#6ba390"]
+
+  frame -> branches -> test
+  test -> branches [label="  Revise the next round", constraint=false, style=dashed]
+  test -> verify [label="  Candidate survives"]
+  verify -> test [label="  Check fails", constraint=false, style=dashed]
+  verify -> result [label="  Check passes"]
+  test -> result [label="  Stop condition met"]
+}
